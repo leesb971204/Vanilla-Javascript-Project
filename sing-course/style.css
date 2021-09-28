@@ -27,6 +27,16 @@ form button {
   cursor: pointer;
   margin: auto;
 }
-.sing_player {
-  display: none;
+.sing_score {
+  display: flex;
+  justify-content: center;
+  margin-right: 100vh;
 }
+.timer {
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+/* .sing_player {
+  display: none;
+} */
