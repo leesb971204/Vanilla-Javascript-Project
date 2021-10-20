@@ -7,15 +7,14 @@ const score = document.querySelector(".sing_score");
 const hint = document.querySelector(".sing_hint");
 const rule = document.querySelector(".sing_rule");
 const timer = document.querySelector(".timer");
+
 skip.addEventListener("click", skipSing);
 start.addEventListener("click", startGame);
 enter.addEventListener("click", answer);
 
-var scores = 0;
-skip.style.display = "none";
+let scores = 0;
 let startTime = 40;
-
-var sing_timer;
+let sing_timer;
 let index1;
 
 function showScore() {
@@ -52,7 +51,7 @@ for (let a = 1; a < 12; a++) {
   arr[a] = arr[0] + 235 * a;
 }
 
-var problems = [
+const problems = [
   {
     sing_name: "헤어진우리가지켜야할것들",
     sing_time: arr[0],
