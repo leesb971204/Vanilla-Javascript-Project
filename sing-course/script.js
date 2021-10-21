@@ -8,10 +8,6 @@ const hint = document.querySelector(".sing_hint");
 const rule = document.querySelector(".sing_rule");
 const timer = document.querySelector(".timer");
 
-skip.addEventListener("click", skipSing);
-start.addEventListener("click", startGame);
-enter.addEventListener("click", answer);
-
 let scores = 0;
 let startTime = 40;
 let sing_timer;
@@ -123,7 +119,7 @@ function deleteMusic() {
   arr.splice(arr.indexOf(arr[i]), 1);
 }
 //정답이거나 스킵시에 사용되는 문제 삭제 함수
-function startGame(event) {
+start.addEventListener("click", (event) => {
   rule.remove();
   showScore();
   startTimer();
@@ -134,9 +130,9 @@ function startGame(event) {
   player.setAttribute("src", getUrl());
   timer.style.display = "flex";
   deleteMusic();
-}
+});
 //게임시작 함수
-function skipSing(event) {
+skip.addEventListener("click", (event) => {
   hint.style.display = "none";
   restartTimer();
   skip.innerText = "Skip";
@@ -147,9 +143,9 @@ function skipSing(event) {
   }
   input.value = " ";
   deleteMusic();
-}
+});
 //문제 스킵 함수
-function answer(event) {
+enter.addEventListener("click", (event) => {
   index1 = problems.findIndex((obj) => obj.sing_time == tmp);
   event.preventDefault();
   if (
@@ -160,7 +156,7 @@ function answer(event) {
     scores++;
     showScore();
   } else wrongAnswer();
-}
+});
 function correctAnswer() {
   timer.innerHTML = "<h2>정답입니다!</h2>";
   skip.innerText = "다음곡";
